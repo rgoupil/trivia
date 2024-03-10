@@ -1,0 +1,15 @@
+# sensitive environment variables must be set in `docker-compose.override.yml`
+
+version: '3.7'
+name: trivia
+services:
+  postgres:
+    image: postgres:16.2-alpine3.19
+    restart: always
+    environment:
+      POSTGRES_DB: dev
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgresql14
+      PGPORT: 5434
+    ports:
+      - 5434:5434
